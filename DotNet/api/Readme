@@ -1,0 +1,50 @@
+We can creates multiple routers in a single controller 
+we also have options to perform server side validations
+we can also perform query like filtering based on certain property
+we shouldnt use models for everything, instead we have to use Data Transfer Object to send or recieve Data
+We must follow a proper principle to design and we must perform operations with the classes that it is meant to be used as
+We have Controller,Repository,Services
+
+Inside we define all the controllers which are reponsible http requests
+    -Get,post,Put,Delete..
+    -We can extract the data inside the routes using {name}
+    -We have to build controller dependency using Builder
+
+Model
+    -We define all the properties in the models
+    -We use anotations for server side validations but it is not a good practise to perform validations using models itself
+    -models must be only used as a model and nothing else
+
+Data transfer Object
+    -We are not using models right
+    -When we want to send data or recieve data we must maintain abstraction and that is the reason we are using DTO
+    -Lets say we want to send userdetails but if we use model to send the user details then there id a problem of sending password along with it and we dont want that to happen
+    To send the data and while recieving the data or to perform the opertaions with the data we must maintain a level of abstraction and this done using DTO
+
+Mappers
+    -We use mapper to convert one object to another object
+    -lets say we have DTO to recieve the user details but we cant directly store DTO in database
+    -We have to convert these DTO to models and then store them in the database.
+    -Mapper are really helpfull in this scenario
+
+Query
+    -We can also perform query and retrieve the data right
+    -We do that using query
+    -inorder to perform query we need to create a query object and within that we write the property which can be used to fetch the data-in short we are performing filering
+    -We also use [FromQuery] in as a parameter to do this and initialise a query object
+    -these properties are optional
+
+Repository
+    -These are reponsible for performing operations with the database
+    -We define an interface and then write down the methods 
+    -we always use interface as a reference
+    -this is a good practise to follow
+    -We also have to provide various level of abstraction and make the code very flexible 
+    -we will learn more about this when we do System design
+
+Pagination
+    -Lets say we have more than 10000 records and we have to retrive them
+    -If we try to retrieve them seperatly then our app would actually crash
+    -And that why we will use Pagination
+    -We will divide them to pages
+    

@@ -1,0 +1,3 @@
+We can perform server side validation using ModelState.isValid function.
+We have to  anotate this using anotations in our model classes ot dto classes.
+We can also perform client side validations using js or ajax or jquery

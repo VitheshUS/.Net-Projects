@@ -1,0 +1,5 @@
+We are using DTO (Data Transfer Object) because we dont want to send all the data in the object.
+There will be some sensitive data and we want to filter that data.
+password is a good example of sensitive data. 
+But if we directly send the model or change the value of sensitive data it would not lokk good.
+So lets create a model class which will contain fields to be sent.
